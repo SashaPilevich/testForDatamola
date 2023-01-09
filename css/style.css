@@ -184,7 +184,8 @@ h2.profile-title{
   border: none;
 }
 #contacts,
-#education{
+#education,
+#english{
   margin-bottom: 80px;
 }
 #contacts{
@@ -244,5 +245,49 @@ h2.profile-title{
 }
 .education-specialize {
   width: 35%;
+}
+.english-container {
+  display: flex;
+}
+.english-text {
+  margin-bottom: 30px;
+}
+.english-scale {
+  width: 50%;
+  height: 50px;
+}
+.english-loader {
+  display: block;
+  position: relative;
+  width: 50%;
+  height: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.english-loader.finish {
+  -webkit-animation: percentScale 4s ease-in 1;
+  animation: percentScale 4s ease-in 1;
+
+  background-image: linear-gradient(
+    to right,
+    rgba(24, 31, 36, 0.7) 0%,
+    rgba(255, 192, 0, 0.9) 75%,
+    rgba(218, 202, 18, 0.8) 100% 
+  );
+  border-radius: 8px;
+}
+.percent {
+  font-size: calc(18px + 6 * (100vw / 1300));
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+@keyframes percentScale {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50%;
+  }
 }
 

@@ -42,3 +42,32 @@ function increment() {
     clearInterval(interval);
   }
 }
+
+let viewport = document.querySelector('.projects-slider').offsetWidth;
+let btnNext = document.getElementById('next');
+let btnPrev = document.getElementById('prev');
+let slider = document.querySelector('.projects-container')
+let viewSliders = document.querySelectorAll('.view-slide')
+let viewSlide = 0
+viewSliders[0].classList.add('active')
+btnNext.addEventListener('click', () => {
+  viewSliders[viewSlide].classList.remove('active')
+if(viewSlide < 3){
+  viewSlide++
+} else {
+  viewSlide=0
+}
+
+viewSliders[viewSlide].classList.add('active')
+slider.style.left = -viewSlide * viewport + 'px'
+})
+btnPrev.addEventListener('click',() => {
+  viewSliders[viewSlide].classList.remove('active')
+  if(viewSlide > 0){
+    viewSlide--
+  } else {
+    viewSlide=3
+  }
+  viewSliders[viewSlide].classList.add('active')
+  slider.style.left = -viewSlide * viewport + 'px'
+})

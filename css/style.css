@@ -18,14 +18,15 @@ html {
 }
 body {
   font-family: 'Montserrat';
-  font-size: 18px;
+  font-size: calc(18px + 1 * (100vw / 1300));
   font-weight: 400;
   background-color: var(--main-background-color) ;
   color: var(--main-color);
 }
 .container {
-  width: 1300px;
+  max-width: 1300px;
   margin: 0 auto;
+  padding: 0px 10px;
 }
 ul,
 li {
@@ -41,31 +42,37 @@ a {
   z-index: 4;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1.5385%;
   background-color: var(--main-background-color);
 }
+
 .nav-list {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 20px;
+  padding: 1.538%;
 }
 .nav-list ul li {
-  height: 75px;
+  height: 100px;
+}
+.nav-item{
+  padding: 1.538% 0;
+}
+.nav-list li:not(:last-child) {
+  margin-right: 4%;
 }
 .nav-list li a {
   position: relative;
   display: flex;
   align-items: center;
   height: 80%;
-  padding: 20px 30px;
+  font-size: calc(16px + 1 * (100vw / 1300));;
   font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.5px;
   text-align: center;
   text-transform: uppercase;
   color: var(--main-color);
 }
+
 .nav-list li a:hover{
   color: var(--second-color);
   transition: 0.6s;
@@ -75,15 +82,15 @@ a {
  display: block;
  clear: both;
  position: absolute;
- bottom: 0;
- left: 15px;
+ bottom: -10px;
+ left: 0px;
  width: 0;
  height: 3px;
  background-color: var(--second-color);
  transition: all 0.6s ease-in-out;
 }
 .nav-list li:hover a::after{
-  width: 80%;
+  width: 100%;
 }
 .main{
   padding-top: 100px;
@@ -91,8 +98,8 @@ a {
 #profile{
   position: relative;
   width: 100%;
-  padding-top: 150px;
-  margin: 0px auto;
+  padding-top: 200px;
+  margin: 0 auto;
   background: var(--second-background-color);
 }
 .profile-wrapper{
@@ -104,7 +111,7 @@ a {
   width: 50%;
 }
 h1 {
-  font-size: 32px;
+  font-size: calc(18px + 16 * (100vw / 1300));;
   font-weight: 900;
   text-transform: uppercase;
   color: var(--second-color);
@@ -112,7 +119,7 @@ h1 {
 }
 h2,
 .profile-name {
-  font-size: 32px;
+  font-size: calc(18px + 16 * (100vw / 1300));
   color:var(--second-color);
   margin-bottom: 30px;
 }
@@ -124,7 +131,7 @@ h2.profile-title{
   color: var(--second-color);
 }
 .profile-description{
-  line-height: 30px;
+  line-height: calc(18px + 12 * (100vw / 1300));
 }
 .profile-image{
   position: relative;
@@ -154,7 +161,7 @@ h2.profile-title{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
+  width: 70%;
   height: 40px;
   margin-left: 40px;
   border-radius: 10px;
@@ -176,8 +183,9 @@ h2.profile-title{
   transition: all 0.8s ease;
   border: none;
 }
-#contacts{
-  margin-bottom: 50px;
+#contacts,
+#education{
+  margin-bottom: 80px;
 }
 #contacts{
   position: relative;
@@ -197,6 +205,7 @@ h2.profile-title{
 .contact-text{
   display: block;
   font-weight: 600;
+  font-size:calc(18px + 6 * (100vw / 1300));
   color:var(--main-color);
   margin-bottom: 30px;
 }
@@ -204,5 +213,36 @@ h2.profile-title{
   cursor: pointer;
   color: var(--second-color);
   transition: 0.6s ease-in-out;
+}
+.education-container {
+  display: flex;
+  flex-direction: column;
+}
+.education-item {
+  display: flex;
+  height: 60px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.education-item:hover .line:after {
+  width: 30%;
+  transition: all 0.8s ease;
+}
+.education-item .line:after {
+  display: block;
+  clear: both;
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 0px;
+  width: 10%;
+  height: 3px;
+  background-color: var(--second-color);
+}
+.education-date {
+  width: 35%;
+}
+.education-specialize {
+  width: 35%;
 }
 

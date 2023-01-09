@@ -45,7 +45,6 @@ a {
   padding: 0 1.5385%;
   background-color: var(--main-background-color);
 }
-
 .nav-list {
   display: flex;
   justify-content: flex-end;
@@ -72,7 +71,6 @@ a {
   text-transform: uppercase;
   color: var(--main-color);
 }
-
 .nav-list li a:hover {
   color: var(--second-color);
   transition: 0.6s;
@@ -186,7 +184,8 @@ h2.profile-title {
 #contacts,
 #education,
 #english,
-#projects {
+#projects,
+#factsaboutme {
   margin-bottom: 80px;
 }
 #contacts {
@@ -301,12 +300,11 @@ h2.profile-title {
   transition: 0.6s;
   width: calc(100% * 4);
   display: flex;
-  /* flex-direction: column; */
 }
 .project-item {
   display: flex;
   justify-content: space-between;
-  /* width: 90%; */
+  width: 19%;
   height: 250px;
   margin: 0 auto 40px;
   padding: 0px 80px 0px 0px;
@@ -349,7 +347,7 @@ h2.profile-title {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 .project-title {
   margin-bottom: 20px;
@@ -444,3 +442,40 @@ h2.profile-title {
   background-size: 100% 100%;
   transform: rotate(180deg);
 }
+.facts-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.facts-item {
+  width: 90%;
+  height: 120px;
+  border-radius: 10px;
+  background-color: var(--second-color);
+  text-align: left;
+  padding: 10px;
+  -moz-box-shadow: 0px 0px 14px #344552;
+  -webkit-box-shadow: 0px 0px 14px #344552;
+  box-shadow: 0px 0px 14px #344552;
+}
+.facts-item:hover{
+  cursor: pointer;
+  -moz-box-shadow: 0px 0px 14px #fce701;
+  -webkit-box-shadow: 0px 0px 14px #fce701;
+  box-shadow: 0px 0px 14px #fce701;
+  transition: all 0.6s ease-in-out;
+}
+.facts-item:hover h3,
+.facts-item:hover h4
+{
+  margin-left: 30px;
+  transition: 0.6s ease-in-out;
+}
+h3{
+  font-size: calc(18px + 20 *((100vw / 1400)));
+  color:var(--second-background-color);
+  margin-bottom: 10px;
+}
+h4{
+  font-weight: 400;
+}
+

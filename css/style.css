@@ -26,7 +26,7 @@ body {
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  /* padding: 0px 10px; */
+  padding: 0px 20px;
 }
 ul,
 li {
@@ -96,13 +96,13 @@ a {
 #profile {
   position: relative;
   width: 100%;
-  padding-top: 200px;
+  padding-top: 150px; 
   margin: 0 auto;
   background: var(--second-background-color);
 }
 .profile-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 72vh;
 }
 .profile-info {
@@ -130,11 +130,12 @@ h2.profile-title {
 }
 .profile-description {
   line-height: calc(18px + 12 * (100vw / 1400));
+  margin-bottom: 50px;
 }
 .profile-image {
   position: relative;
 }
-.profile-image:after {
+.profile-image::before {
   display: block;
   clear: both;
   content: "";
@@ -152,16 +153,16 @@ h2.profile-title {
   z-index: 2;
   width: 230px;
   height: 240px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   border-radius: 50%;
+  margin-right: 50px;
 }
 .profile-download {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70%;
+  width: 25%;
   height: 40px;
-  margin-left: 40px;
   border-radius: 10px;
   border: 2px solid var(--second-color);
 }
@@ -199,7 +200,7 @@ h2.profile-title {
   left: 0;
   display: block;
   width: 100%;
-  height: 100px;
+  height: 70px;
   background-image: linear-gradient(180deg, #1e2124 5%, #181f24 100%);
   transform: translate(0px, -100%);
 }
@@ -444,6 +445,7 @@ h2.profile-title {
 }
 .facts-container{
   display: grid;
+  justify-items: center;
   grid-template-columns: repeat(4, 1fr);
 }
 .facts-item {
@@ -477,5 +479,44 @@ h3{
 }
 h4{
   font-weight: 400;
+}
+.footer{
+  height: 75px;
+}
+.footer-container,
+.footer-social{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ico {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-right: 30px;
+}
+.ico.ico-linkedin{
+  background-image: url("../assets/svg/linkedin.svg");
+}
+.ico.ico-github{
+  background-image: url("../assets/svg/github.svg");
+}
+.ico.ico-telegram{
+  background-image: url("../assets/svg/telegram.svg");
+}
+.ico.ico-github:hover,
+.ico.ico-linkedin:hover,
+.ico.ico-telegram:hover{
+  -moz-box-shadow: 0px 0px 14px #fce701;
+  -webkit-box-shadow: 0px 0px 14px #fce701;
+  box-shadow: 0px 0px 14px #fce701;
+  transition: all 0.4s ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 

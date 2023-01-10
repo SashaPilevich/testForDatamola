@@ -1,21 +1,15 @@
-/* @media (max-width: 1200px){
-  .container {
-    width: 1024px;
-    padding: 0px 30px;
-  }
-} */
 @media (max-width: 800px) {
   .education-item {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
   }
-  .line{
-    display: none;
+  .education-item:not(:last-child){
+    margin-bottom: 60px;
   }
-  .education-date,
-  .education-specialize,
-  .education-place {
+  
+  .lng-education-date,
+  .lng-education-specialize,
+  .lng-education-place {
     margin-bottom: 20px;
     width: 100%;
   }
@@ -24,48 +18,70 @@
   .nav {
     display: none;
   }
-  .header-container{
+  .header-container {
     justify-content: flex-end;
   }
   .burger-menu {
     display: block;
   }
-  #profile{
+  #profile {
     padding-top: 50px;
   }
-  .profile-wrapper{
+  .profile-wrapper {
     height: auto;
     margin-bottom: 50px;
   }
-  .profile-image{
+  .profile-image {
     display: none;
   }
-  .profile-info{
-    width: 80%;
+  .profile-info {
+    width: 90%;
   }
-  #contacts::before{
+  #contacts::before {
     height: 50px;
   }
   .english-scale,
-  .english-loader{
+  .english-loader {
     width: 70%;
   }
-  .project-image{
+  .project-image {
     display: none;
   }
-  .project-description{
+  .project-description {
     width: 100%;
     align-items: center;
   }
-  .project-text{
+  .lng-project-text {
     text-align: center;
   }
 }
 @media (max-width: 660px) {
-  .footer-container{
+  .footer-container {
     flex-direction: column;
   }
-  .footer-date{
+  .lng-footer-date {
     margin-bottom: 30px;
   }
 }
+@media (max-width: 376px) {
+.facts-container{
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.projects-control.projects-control-prev::before, .projects-control.projects-control-next::after,
+.projects-control.projects-control-prev,
+.projects-control.projects-control-next{
+  width: 30px;
+  height: 30px;
+}
+.project-item{
+  padding: 0px;
+}
+.project-description{
+  justify-content: space-around;
+}
+}
+@media (max-width: 321px) {
+.projects-control.projects-control-prev{
+  right: 83%;
+}}
+

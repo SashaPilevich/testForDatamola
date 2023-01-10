@@ -24,6 +24,9 @@
   .nav {
     display: none;
   }
+  .header-container{
+    justify-content: flex-end;
+  }
   .burger-menu {
     display: block;
   }

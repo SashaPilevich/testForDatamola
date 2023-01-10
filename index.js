@@ -111,3 +111,52 @@ link.addEventListener("click", () => {
   mobilenav.classList.remove("active");
   isOpen = false;
 });
+
+
+const language = document.querySelector(".change-language");
+const english = document.getElementById("1");
+const russian = document.getElementById("2");
+const allLang = ['en','ru'];
+function changeURLLanguage(event) {
+  const currTab = event.target.dataset.btn;
+  let lang;
+  if(currTab==1){
+    lang = "en";
+  } else if(currTab==2){
+    lang = "ru"
+  }
+  location.href = window.location.pathname + '#' + lang;
+  location.reload()
+}
+
+language.addEventListener('click', changeURLLanguage);
+
+function changeLanguage() {
+  let hash = window.location.hash;
+  hash = hash.substring(1);
+  console.log(hash)
+  if(hash=="en"){
+    english.classList.add('active');
+    russian.classList.remove('active')
+  } else if(hash=="ru"){
+    english.classList.remove('active');
+    russian.classList.add('active')
+  }
+  if (!allLang.includes(hash)) {
+      location.href = window.location.pathname + '#en';
+      location.reload();
+  }
+  for (let key in langArr) {
+      let elem = document.querySelector('.lng-' + key);
+      if (elem) {
+          elem.innerHTML = langArr[key][hash];
+      }
+      if(Array.isArray(langArr[key][hash])){
+        let all = document.querySelectorAll('.lng-' + key)
+        for(let elementKey = 0; elementKey < all.length; elementKey++){
+          all[elementKey].innerHTML = langArr[key][hash][elementKey]
+        }
+      } 
+  }
+}
+changeLanguage();

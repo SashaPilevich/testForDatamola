@@ -8,24 +8,14 @@ let heightBlock = englishBlock.offsetHeight;
 let offsetBlock = offset(englishBlock).top
 const animStart = 1;
 let animItemPoint = window.innerHeight - heightBlock / animStart;
-function isVisible(elem) {
 
-  let coords = elem.getBoundingClientRect();
-  let windowHeight = document.documentElement.clientHeight;
-  let topVisible = coords.top > 0 && coords.top < windowHeight;
-  let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
-
-  return topVisible || bottomVisible;
-}
 window.addEventListener('scroll', () => {
-  
   if (
     scrollY > offsetBlock - animItemPoint &&
     screenY < offsetBlock + heightBlock
   ) {
     interval = setInterval(increment, 100);
   }
-  
 });
 function offset(el) {
   const rect = el.getBoundingClientRect();
@@ -34,7 +24,7 @@ function offset(el) {
   return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
 }
 function increment() {
-  if (current <= 78) {
+  if (current <= 82) {
     current = current + 1;
     percent.innerHTML = current + "%";
     loader.classList.add("finish");
@@ -57,7 +47,6 @@ if(viewSlide < 3){
 } else {
   viewSlide=0
 }
-
 viewSliders[viewSlide].classList.add('active')
 slider.style.left = -viewSlide * viewport + 'px'
 })
@@ -128,7 +117,6 @@ function changeURLLanguage(event) {
   location.href = window.location.pathname + '#' + lang;
   location.reload()
 }
-
 language.addEventListener('click', changeURLLanguage);
 
 function changeLanguage() {
@@ -146,15 +134,15 @@ function changeLanguage() {
       location.href = window.location.pathname + '#en';
       location.reload();
   }
-  for (let key in langArr) {
+  for (let key in langLibrary) {
       let elem = document.querySelector('.lng-' + key);
       if (elem) {
-          elem.innerHTML = langArr[key][hash];
+          elem.innerHTML = langLibrary[key][hash];
       }
-      if(Array.isArray(langArr[key][hash])){
+      if(Array.isArray(langLibrary[key][hash])){
         let all = document.querySelectorAll('.lng-' + key)
         for(let elementKey = 0; elementKey < all.length; elementKey++){
-          all[elementKey].innerHTML = langArr[key][hash][elementKey]
+          all[elementKey].innerHTML = langLibrary[key][hash][elementKey]
         }
       } 
   }

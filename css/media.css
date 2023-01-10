@@ -1,0 +1,68 @@
+/* @media (max-width: 1200px){
+  .container {
+    width: 1024px;
+    padding: 0px 30px;
+  }
+} */
+@media (max-width: 800px) {
+  .education-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .line{
+    display: none;
+  }
+  .education-date,
+  .education-specialize,
+  .education-place {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  .burger-menu {
+    display: block;
+  }
+  #profile{
+    padding-top: 50px;
+  }
+  .profile-wrapper{
+    height: auto;
+    margin-bottom: 50px;
+  }
+  .profile-image{
+    display: none;
+  }
+  .profile-info{
+    width: 80%;
+  }
+  #contacts::before{
+    height: 50px;
+  }
+  .english-scale,
+  .english-loader{
+    width: 70%;
+  }
+  .project-image{
+    display: none;
+  }
+  .project-description{
+    width: 100%;
+    align-items: center;
+  }
+  .project-text{
+    text-align: center;
+  }
+}
+@media (max-width: 660px) {
+  .footer-container{
+    flex-direction: column;
+  }
+  .footer-date{
+    margin-bottom: 30px;
+  }
+}
